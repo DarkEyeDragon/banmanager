@@ -17,4 +17,6 @@ commands:
      description: ip ban a player
    ip:
      description: check the ip of a player
+   mute:
+      description: mute a player.
     

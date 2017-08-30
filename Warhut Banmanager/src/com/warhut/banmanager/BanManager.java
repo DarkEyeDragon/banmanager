@@ -7,8 +7,10 @@ import com.warhut.banmanager.commands.BanCommand;
 import com.warhut.banmanager.commands.FillTableCommand;
 import com.warhut.banmanager.commands.IpLookupCommand;
 import com.warhut.banmanager.commands.IpbanCommand;
+import com.warhut.banmanager.commands.MuteCommand;
 import com.warhut.banmanager.commands.PardonCommand;
 import com.warhut.banmanager.commands.TempbanCommand;
+import com.warhut.banmanager.events.PlayerChatEvent;
 import com.warhut.banmanager.events.PlayerJoinEvent;
 
 public class BanManager extends JavaPlugin{
@@ -46,7 +48,9 @@ public class BanManager extends JavaPlugin{
 		this.getCommand("pardon").setExecutor(new PardonCommand(this));
 		this.getCommand("ipban").setExecutor(new IpbanCommand(this));
 		this.getCommand("ip").setExecutor(new IpLookupCommand());
+		this.getCommand("mute").setExecutor(new MuteCommand());
 		this.getServer().getPluginManager().registerEvents(new PlayerJoinEvent(this), this);
+		this.getServer().getPluginManager().registerEvents(new PlayerChatEvent(), this);
 	}
 	public void onDisable(){
 		this.getLogger().info(this.getDescription().getName()+" "+this.getDescription().getVersion()+" has been disabled");
