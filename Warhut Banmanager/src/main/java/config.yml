@@ -1,0 +1,32 @@
+##Plugin by DarkEyeDragon for Warhut
+#make sure to add the port at the end of the IP if its not the default(3306) port
+#You will have to create the database yourself. The plugin will create the tables for you.
+mysql:
+  usedatabase: false
+  ip: localhost
+  database: ban_manager
+  username: root
+  password: ''
+  bans_table: bans
+  ipbans_table: ipbans
+  mutes_table: mutes
+
+#Messages displayed to the players
+#prefix can be used in other messages with <prefix>
+#other supported values are: <offender> <time> <punisher> <reason>
+messages:
+  prefix: "Banmanager: "
+  ban:
+    broadcast: "<offender> has been banned by <punisher>"
+    ban_kick: "You have been banned by <punisher> time: permanent"
+    ban_join: "You have been banned by <punisher> time: permanent"
+  tempban:
+    broadcast: "<offender> has been banned for <time> by <punisher>"
+    kick: "You have been banned by <punisher> time: <time>"
+    join: "You have been banned by <punisher> time: <time>"
+  ipban:
+    broadcast: "<offender> has been ipbanned by <punisher>"
+    kick: "<offender> has been ipbanned by <punisher>"
+    join: "<offender> has been ipbanned by <punisher>"
+  kick: "<offender> has been kicked by <punisher> for <reason>"
+  mute: "<offender> was muted by <punisher> for <time> <reason>"
